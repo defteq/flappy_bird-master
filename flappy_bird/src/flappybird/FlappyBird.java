@@ -21,7 +21,7 @@ import javax.swing.Timer;
  */
 public class FlappyBird implements ActionListener, KeyListener {
 
-    public static final int FPS = 60, WIDTH = 640, HEIGHT = 480;
+    public static final int FPS = 100, WIDTH = 640, HEIGHT = 480;
 
     private Bird bird;
     private JFrame frame;
