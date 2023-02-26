@@ -11,6 +11,8 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+import static flappybird.FlappyBird.HEIGHT;
+
 /**
  *
  * @author User
@@ -19,14 +21,17 @@ public class Bird {
     public float x, y, vx, vy;
     public static final int RAD = 25;
     private Image img;
-    public Bird() {
+    public void Fly() throws InterruptedException, IOException {
         x = FlappyBird.WIDTH/2;
-        y = FlappyBird.HEIGHT/2;
+        y = HEIGHT/2;
         try {
             img = ImageIO.read(new File("sticker,375x360.u2.png"));
         }
         catch(IOException e) {
             e.printStackTrace();
+        }
+        if (RAD >= HEIGHT/2){
+            img = ImageIO.read(new File("sticker,375x360.u3.png"));
         }
     }
     public void physics() {
